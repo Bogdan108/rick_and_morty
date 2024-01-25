@@ -4,7 +4,6 @@ import 'package:rick_and_morty/feature/domain/entities/person_entity.dart';
 class PersonModel extends PersonEntity {
   const PersonModel({
     required id,
-    required name,
     required status,
     required species,
     required type,
@@ -14,6 +13,7 @@ class PersonModel extends PersonEntity {
     required image,
     required episode,
     required created,
+    required name,
   }) : super(
           id: id,
           name: name,
