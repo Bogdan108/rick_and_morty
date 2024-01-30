@@ -8,5 +8,5 @@ class NetworkInfoImpl implements NetworkInfo {
   final InternetConnectionChecker connectionCheker;
   NetworkInfoImpl({required this.connectionCheker});
   @override
-  Future<bool> get isConnected => throw UnimplementedError();
+  Future<bool> get isConnected => connectionCheker.hasConnection;
 }

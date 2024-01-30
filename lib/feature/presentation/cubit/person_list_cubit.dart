@@ -6,8 +6,7 @@ import 'package:rick_and_morty/feature/presentation/cubit/person_list_sate.dart'
 class PersonListCubit extends Cubit<PersonState> {
   final GetAllPersons getAllPersons;
 
-  PersonListCubit({required this.getAllPersons})
-      : super(const PersonLoading(oldPersonList: []));
+  PersonListCubit({required this.getAllPersons}) : super(PersonEmpty());
   int page = 1;
   void loadPerson() async {
     if (state is PersonLoading) return;
@@ -16,11 +15,11 @@ class PersonListCubit extends Cubit<PersonState> {
     if (currentState is PersonLoaded) {
       oldPerson = currentState.personsList;
     }
-    emit(PersonLoading(oldPersonList: oldPerson, isFirstFetch: page == 1));
+    emit(PersonLoading(oldPersonsList: oldPerson, isFirstFetch: page == 1));
     final failreOrPerson = await getAllPersons(PagePersonParams(page: page));
     failreOrPerson.fold((l) => const PersonError(message: ''), (character) {
       page++;
-      final persons = (state as PersonLoading).oldPersonList;
+      final persons = (state as PersonLoading).oldPersonsList;
       persons.addAll(character);
       emit(PersonLoaded(personsList: persons));
     });

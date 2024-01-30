@@ -14,12 +14,13 @@ class PersonEmpty extends PersonState {
 }
 
 class PersonLoading extends PersonState {
-  final List<PersonEntity> oldPersonList;
+  final List<PersonEntity> oldPersonsList;
   final bool isFirstFetch;
 
-  const PersonLoading({required this.oldPersonList, this.isFirstFetch = false});
+  const PersonLoading(
+      {required this.oldPersonsList, this.isFirstFetch = false});
   @override
-  List<Object?> get props => [oldPersonList];
+  List<Object?> get props => [oldPersonsList];
 }
 
 class PersonLoaded extends PersonState {

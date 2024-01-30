@@ -7,9 +7,9 @@ import 'package:rick_and_morty/locator_service/locator_service.dart' as di;
 import 'package:rick_and_morty/locator_service/locator_service.dart';
 import 'package:rick_and_morty/pages/home_page.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  di.init();
+  await di.init();
   runApp(const MainApp());
 }
 
