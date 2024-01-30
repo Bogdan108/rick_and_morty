@@ -6,7 +6,8 @@ import 'package:rick_and_morty/feature/presentation/cubit/person_list_sate.dart'
 class PersonListCubit extends Cubit<PersonState> {
   final GetAllPersons getAllPersons;
 
-  PersonListCubit({required this.getAllPersons}) : super(PersonEmpty());
+  PersonListCubit({required this.getAllPersons})
+      : super(const PersonLoading(oldPersonList: []));
   int page = 1;
   void loadPerson() async {
     if (state is PersonLoading) return;
