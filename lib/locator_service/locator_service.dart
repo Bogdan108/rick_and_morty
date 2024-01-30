@@ -1,5 +1,5 @@
-import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
+import 'package:http/http.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:rick_and_morty/core/platform/network_info.dart';
 import 'package:rick_and_morty/feature/data/data_sources/person_local_data_source.dart';
@@ -46,6 +46,6 @@ init() async {
   // External
   final sharedPreferences = await SharedPreferences.getInstance();
   sl.registerLazySingleton(() => sharedPreferences);
-  sl.registerLazySingleton(() => http.Client());
+  sl.registerLazySingleton(() => Client());
   sl.registerLazySingleton(() => InternetConnectionChecker());
 }

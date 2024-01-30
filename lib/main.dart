@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rick_and_morty/common/app_colors.dart';
 import 'package:rick_and_morty/feature/presentation/bloc/search_bloc.dart';
 import 'package:rick_and_morty/feature/presentation/cubit/person_list_cubit.dart';
 import 'package:rick_and_morty/locator_service/locator_service.dart' as di;
@@ -28,8 +29,8 @@ class MainApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: ThemeData.dark().copyWith(
-          backgroundColor: Colors.black,
-          scaffoldBackgroundColor: Colors.grey,
+          backgroundColor: AppColors.mainBackground,
+          scaffoldBackgroundColor: AppColors.mainBackground,
         ),
         home: const HomePage(),
       ),
