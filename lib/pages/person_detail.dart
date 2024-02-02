@@ -11,7 +11,7 @@ class PersonDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Detail info')),
-      body: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+      body: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
         Expanded(flex: 1, child: Text(person.name)),
         const SizedBox(height: 20),
         Flexible(

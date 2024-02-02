@@ -8,8 +8,8 @@ import 'package:rick_and_morty/feature/data/repository/person_repository_impl.da
 import 'package:rick_and_morty/feature/domain/repository/person_repository.dart';
 import 'package:rick_and_morty/feature/domain/use_cases/get_all_persons.dart';
 import 'package:rick_and_morty/feature/domain/use_cases/search_person.dart';
-import 'package:rick_and_morty/feature/presentation/bloc/search_bloc.dart';
-import 'package:rick_and_morty/feature/presentation/cubit/person_list_cubit.dart';
+import 'package:rick_and_morty/feature/presentation/bloc_search/search_bloc.dart';
+import 'package:rick_and_morty/feature/presentation/bloc_download/person_list_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final sl = GetIt.instance;

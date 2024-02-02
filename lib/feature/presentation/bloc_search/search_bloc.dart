@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/core/error/failure.dart';
 import 'package:rick_and_morty/feature/domain/use_cases/search_person.dart';
-import 'package:rick_and_morty/feature/presentation/bloc/search_event.dart';
-import 'package:rick_and_morty/feature/presentation/bloc/search_state.dart';
+import 'package:rick_and_morty/feature/presentation/bloc_search/search_event.dart';
+import 'package:rick_and_morty/feature/presentation/bloc_search/search_state.dart';
 
 // ignore: constant_identifier_names
 const SERVER_FAILURE_MESSAGE = 'Server Failure';
