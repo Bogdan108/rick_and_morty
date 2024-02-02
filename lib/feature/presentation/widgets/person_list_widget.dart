@@ -57,7 +57,7 @@ class _PersonsListState extends State<PersonsList> {
           if (index < persons.length) {
             return PersonCard(person: persons[index]);
           } else {
-            Timer(Duration(milliseconds: 30), () {
+            Timer(Duration(milliseconds: 100), () {
               scrollController
                   .jumpTo(scrollController.position.maxScrollExtent);
             });
