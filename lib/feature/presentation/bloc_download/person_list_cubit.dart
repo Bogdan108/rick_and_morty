@@ -8,6 +8,7 @@ class PersonListCubit extends Cubit<PersonState> {
 
   PersonListCubit({required this.getAllPersons}) : super(PersonEmpty());
   int page = 1;
+  bool isFirstFetch = true;
   void loadPerson() async {
     if (state is PersonLoading) return;
     final currentState = state;
@@ -15,10 +16,11 @@ class PersonListCubit extends Cubit<PersonState> {
     if (currentState is PersonLoaded) {
       oldPerson = currentState.personsList;
     }
-    emit(PersonLoading(oldPersonsList: oldPerson, isFirstFetch: page == 1));
+    emit(PersonLoading(oldPersonsList: oldPerson, isFirstFetch: isFirstFetch));
     final failreOrPerson = await getAllPersons(PagePersonParams(page: page));
     failreOrPerson.fold((l) => const PersonError(message: ''), (character) {
       page++;
+      isFirstFetch = false;
       final persons = (state as PersonLoading).oldPersonsList;
       persons.addAll(character);
       emit(PersonLoaded(personsList: persons));

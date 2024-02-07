@@ -24,10 +24,11 @@ class _PersonsListState extends State<PersonsList> {
 
   void setupScrollController() {
     scrollController.addListener(() {
-      if (scrollController.position.atEdge) {
-        if (scrollController.position.pixels != 0) {
-          context.read<PersonListCubit>().loadPerson();
-        }
+      double maxScroll = scrollController.position.maxScrollExtent;
+      double currentScroll = scrollController.position.pixels;
+      double delta = 0.0;
+      if (maxScroll - currentScroll <= delta) {
+        context.read<PersonListCubit>().loadPerson();
       }
     });
   }
